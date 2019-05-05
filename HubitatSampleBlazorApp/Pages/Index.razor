@@ -1,0 +1,26 @@
+﻿@page "/"
+@using HubitatSampleBlazorApp.Data
+@inject IApiService ApiService
+
+<button onclick="@SendRequest">@_stringValue</button>
+
+@functions
+{
+    private bool _onOff = true;
+    private string _stringValue = "on";
+    private const string DeviceId = "1";
+
+    protected override async void OnInit()
+    {
+        _stringValue = await ApiService.GetSwitchStatus(DeviceId);
+        _onOff = _stringValue == "on";
+    }
+
+    public async Task SendRequest()
+    {
+        _onOff = !_onOff;
+        _stringValue = _onOff ? "on" : "off";
+
+        await ApiService.ToggleSwitch(_stringValue, DeviceId);
+    }
+}
