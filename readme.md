@@ -6,3 +6,7 @@ To use this project, clone it using
 then go to the appsettings.json file and change the values in the `HubitatApiInfo` object. You will also need to change the DeviceID in the Index.razor file. You can find the details in the MakerApi page on your Hubitat device. I didn't know what the "random string" was called in Hubitat, but it is the value directly after `/api/` and before `/apps/` in your cloud URLS section.
 
 The button changes values based on Hubitat's actual value. I have only configured the project to refresh this string when the project starts and when the `SendRequest` function is called/button is pressed. This idea of this app was to create a blazor app using an API I enjoy using, not to create something fully functional.
+
+## NOTE
+
+I no longer use Hubitat. This repository will not be maintained or updated, but please feel free to fork this repository and make updates.
